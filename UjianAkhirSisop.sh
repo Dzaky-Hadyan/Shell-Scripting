@@ -14,19 +14,9 @@ caesar () {
 	a=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
 	if [ "$A1Z26" == true ]; then
 	number=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26)
-	echo "amogus"
 	fi
 	misc=()
 	for ((i=0; i<${#input}; i++)) do
-#		if [ "$A1Z26" == true ]
-#		for ((j=0; j<=${#a[@]}; j++)) do
-#			shopt -s nocasematch
-#			if [[ "${chars[$i]}" == "${a[$j]}" ]]; then
-#				index[$i]=$j
-#				break
-#			fi
-#		done
-#		fi
 		for ((j=0; j<=${#a[@]}; j++)) do
 			shopt -s nocasematch
 			if [[ "${chars[$i]}" == "${a[$j]}" ]]; then
@@ -68,17 +58,8 @@ do
 			caesar $shift;;
 		2)	shift="13"
 			caesar $shift;;
-		3)echo "1. Alphabet->Number"
-		  echo "2. Number->Alphabet"
-		  echo -n "Menu: " && read menu
-		case $menu in
-			1)	A1Z26=true
-				caesar $A1Z26;;
-			2)	A1Z26=true
-				fromNumber=true
-				caesar $A1Z26 $fromNumber;;
-			*)	echo "Input Invalid ૮(˶ㅠ︿ㅠ)ა"
-		esac;;
+		3)	A1Z26=true
+			caesar $A1Z26;;
 		*)	echo "Input Invalid ૮(˶ㅠ︿ㅠ)ა";;
 	esac
 done
